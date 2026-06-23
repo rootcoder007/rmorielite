@@ -37,4 +37,4 @@ AGPL-3.0-or-later. Same as upstream `rmorie`.
 
 ## Author
 
-Vansh Singh Ruhela — vansh.ruhela@mail.utoronto.ca · ORCID [0009-0004-1750-3592](https://orcid.org/0009-0004-1750-3592)
+Vansh Singh Ruhela — vsruhela@proton.me · ORCID [0009-0004-1750-3592](https://orcid.org/0009-0004-1750-3592)

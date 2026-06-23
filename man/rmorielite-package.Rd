@@ -49,7 +49,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Vansh Singh Ruhela \email{vansh.ruhela@mail.utoronto.ca} (\href{https://orcid.org/0009-0004-1750-3592}{ORCID})
+\strong{Maintainer}: Vansh Singh Ruhela \email{vsruhela@proton.me} (\href{https://orcid.org/0009-0004-1750-3592}{ORCID})
 
 }
 \keyword{internal}
