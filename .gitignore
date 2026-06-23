@@ -1,0 +1,13 @@
+# R artifacts
+.Rhistory
+.RData
+.Rproj.user/
+.Renviron
+*.Rcheck/
+
+# Build outputs
+*.tar.gz
+
+# OS cruft
+.DS_Store
+Thumbs.db

@@ -1,0 +1,40 @@
+Package: rmorielite
+Type: Package
+Title: Polite Retrieval of Canadian Carceral and Police-Oversight Data
+Version: 0.1.0
+Authors@R: c(
+  person(
+    given = "Vansh Singh",
+    family = "Ruhela",
+    email = "vansh.ruhela@mail.utoronto.ca",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0009-0004-1750-3592")
+  )
+ )
+Maintainer: Vansh Singh Ruhela <vansh.ruhela@mail.utoronto.ca>
+Description: Polite-by-default fetching, manifest-aware caching, and
+  schema-validated ingestion for two openly-published Canadian
+  administrative datasets: the Ontario Offender Tracking Information
+  System (OTIS) restrictive-confinement detailed dataset, and federal
+  Structured Intervention Unit (SIU) reports. Scoped narrowly to data
+  retrieval and extraction. The full multi-domain rmorie toolkit
+  (causal inference, MRM framework, statistical physics, signal
+  processing, cryptography) lives upstream at
+  <https://github.com/rootcoder007/rmorie>.
+License: AGPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+  R (>= 4.1.0)
+Imports:
+  httr2,
+  tools,
+  utils
+Suggests:
+  testthat (>= 3.0.0),
+  knitr,
+  rmarkdown
+URL: https://github.com/rootcoder007/rmorielite
+BugReports: https://github.com/rootcoder007/rmorielite/issues
+Config/testthat/edition: 3
