@@ -6,12 +6,12 @@ Authors@R: c(
   person(
     given = "Vansh Singh",
     family = "Ruhela",
-    email = "vansh.ruhela@mail.utoronto.ca",
+    email = "vsruhela@proton.me",
     role = c("aut", "cre"),
     comment = c(ORCID = "0009-0004-1750-3592")
   )
  )
-Maintainer: Vansh Singh Ruhela <vansh.ruhela@mail.utoronto.ca>
+Maintainer: Vansh Singh Ruhela <vsruhela@proton.me>
 Description: Polite-by-default fetching, manifest-aware caching, and
   schema-validated ingestion for two openly-published Canadian
   administrative datasets: the Ontario Offender Tracking Information
