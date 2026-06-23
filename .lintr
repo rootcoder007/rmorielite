@@ -1,0 +1,11 @@
+linters: linters_with_defaults(
+    line_length_linter(120),
+    object_name_linter = NULL,           # rmorielite_* is intentional
+    commented_code_linter = NULL,
+    cyclocomp_linter = cyclocomp_linter(complexity_limit = 25)
+  )
+exclusions: list(
+    "tests/testthat/_snaps",
+    "man",
+    "renv"
+  )
