@@ -1,6 +1,6 @@
 Package: rmorielite
 Type: Package
-Title: Polite Retrieval of Canadian Carceral and Police-Oversight Data
+Title: Carceral, Policing, and Public-Health Data Retrieval and Analysis
 Version: 0.1.0
 Authors@R: c(
   person(
@@ -12,15 +12,15 @@ Authors@R: c(
   )
  )
 Maintainer: Vansh Singh Ruhela <vsruhela@proton.me>
-Description: Polite-by-default fetching, manifest-aware caching, and
-  schema-validated ingestion for two openly-published Canadian
-  administrative datasets: the Ontario Offender Tracking Information
-  System (OTIS) restrictive-confinement detailed dataset, and federal
-  Structured Intervention Unit (SIU) reports. Scoped narrowly to data
-  retrieval and extraction. The full multi-domain rmorie toolkit
-  (causal inference, MRM framework, statistical physics, signal
-  processing, cryptography) lives upstream at
-  <https://github.com/rootcoder007/rmorie>.
+Description: A focused interface for retrieving, mining, and analysing
+  open carceral, policing, police-oversight, and public-health data. Covers
+  correctional tracking (OTIS), municipal police services (Toronto, New York,
+  Chicago, Vancouver), special-investigations and oversight bodies (SIU,
+  ARSAU), and substance-use surveys (Canadian Cannabis Survey, CPADS, and
+  related Health Infobase and CIHI tables). Provides polite, cache-aware
+  fetchers and re-exports the focused domain analysis API (causal estimators,
+  survey weighting, fairness audits, spatial statistics, item-response models)
+  from the upstream 'rmorie' toolkit.
 License: AGPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
