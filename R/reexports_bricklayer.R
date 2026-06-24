@@ -1,64 +1,64 @@
-# Re-exported reproducibility/provenance utilities from moriebricklayer
+# Re-exported reproducibility/provenance utilities from rmoriebricklayer
 # (CKAN resolution, SHA256 + Wayback provenance, schema validation,
-# synthetic fallback). Implementations live in moriebricklayer.
+# synthetic fallback). Implementations live in rmoriebricklayer.
 
-#' @importFrom moriebricklayer apply_schema_validation
+#' @importFrom rmoriebricklayer apply_schema_validation
 #' @export
-moriebricklayer::apply_schema_validation
+rmoriebricklayer::apply_schema_validation
 
-#' @importFrom moriebricklayer download_data
+#' @importFrom rmoriebricklayer download_data
 #' @export
-moriebricklayer::download_data
+rmoriebricklayer::download_data
 
-#' @importFrom moriebricklayer friendly_download
+#' @importFrom rmoriebricklayer friendly_download
 #' @export
-moriebricklayer::friendly_download
+rmoriebricklayer::friendly_download
 
-#' @importFrom moriebricklayer load_provenance
+#' @importFrom rmoriebricklayer load_provenance
 #' @export
-moriebricklayer::load_provenance
+rmoriebricklayer::load_provenance
 
-#' @importFrom moriebricklayer make_manifest
+#' @importFrom rmoriebricklayer make_manifest
 #' @export
-moriebricklayer::make_manifest
+rmoriebricklayer::make_manifest
 
-#' @importFrom moriebricklayer make_synthetic_column
+#' @importFrom rmoriebricklayer make_synthetic_column
 #' @export
-moriebricklayer::make_synthetic_column
+rmoriebricklayer::make_synthetic_column
 
-#' @importFrom moriebricklayer make_synthetic_csv
+#' @importFrom rmoriebricklayer make_synthetic_csv
 #' @export
-moriebricklayer::make_synthetic_csv
+rmoriebricklayer::make_synthetic_csv
 
-#' @importFrom moriebricklayer record
+#' @importFrom rmoriebricklayer record
 #' @export
-moriebricklayer::record
+rmoriebricklayer::record
 
-#' @importFrom moriebricklayer resolve_via_ckan
+#' @importFrom rmoriebricklayer resolve_via_ckan
 #' @export
-moriebricklayer::resolve_via_ckan
+rmoriebricklayer::resolve_via_ckan
 
-#' @importFrom moriebricklayer resolve_via_ckan_search
+#' @importFrom rmoriebricklayer resolve_via_ckan_search
 #' @export
-moriebricklayer::resolve_via_ckan_search
+rmoriebricklayer::resolve_via_ckan_search
 
-#' @importFrom moriebricklayer sha256_file
+#' @importFrom rmoriebricklayer sha256_file
 #' @export
-moriebricklayer::sha256_file
+rmoriebricklayer::sha256_file
 
-#' @importFrom moriebricklayer validate_schema
+#' @importFrom rmoriebricklayer validate_schema
 #' @export
-moriebricklayer::validate_schema
+rmoriebricklayer::validate_schema
 
-#' @importFrom moriebricklayer verify_sha256
+#' @importFrom rmoriebricklayer verify_sha256
 #' @export
-moriebricklayer::verify_sha256
+rmoriebricklayer::verify_sha256
 
-#' @importFrom moriebricklayer write_manifest_json
+#' @importFrom rmoriebricklayer write_manifest_json
 #' @export
-moriebricklayer::write_manifest_json
+rmoriebricklayer::write_manifest_json
 
-#' @importFrom moriebricklayer write_summary_txt
+#' @importFrom rmoriebricklayer write_summary_txt
 #' @export
-moriebricklayer::write_summary_txt
+rmoriebricklayer::write_summary_txt
 

@@ -28,7 +28,7 @@ Depends:
   R (>= 4.1.0)
 Imports:
   rmorie,
-  moriebricklayer,
+  rmoriebricklayer,
   httr2,
   tools,
   utils
