@@ -28,13 +28,18 @@ RoxygenNote: 7.3.3
 Depends:
   R (>= 4.1.0)
 Imports:
+  rmorie,
   httr2,
   tools,
   utils
 Suggests:
+  rmoriedata,
   testthat (>= 3.0.0),
   knitr,
   rmarkdown
 URL: https://github.com/rootcoder007/rmorielite
 BugReports: https://github.com/rootcoder007/rmorielite/issues
 Config/testthat/edition: 3
+Remotes:
+  rootcoder007/rmorie,
+  rootcoder007/rmoriedata

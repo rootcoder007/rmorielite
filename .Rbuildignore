@@ -10,3 +10,6 @@
 ^docs$
 ^pkgdown$
 ^cran-comments\.md$
+^\.lintr$
+^\.pre-commit-config\.yaml$
+^build-rmorielite\.sh$

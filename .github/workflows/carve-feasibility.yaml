@@ -1,0 +1,43 @@
+# carve-feasibility.yaml — TIMING + FEASIBILITY probe for the rmorielite carve.
+# Single ubuntu cell: install the ~46 CRAN deps as binaries (Posit PM),
+# roxygenise (regenerate NAMESPACE + man from the carved R files), then
+# R CMD check. Capped so a stuck install can't burn hours. If this is
+# green + reasonably fast, the carve is viable; if not, we fall back to a
+# lean fetch/data-mining-only scope.
+on:
+  push:
+    branches: [carve-test]
+  workflow_dispatch:
+
+name: carve-feasibility
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+      _R_CHECK_FORCE_SUGGESTS_: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          use-public-rspm: true
+      - name: Install deps + tooling (binaries via PPM)
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck, any::roxygen2
+          needs: check
+      - name: Roxygenise (regenerate NAMESPACE + man from carved files)
+        run: Rscript -e 'roxygen2::roxygenise(); cat("EXPORTS:", sum(grepl("^export", readLines("NAMESPACE"))), "\n")'
+      - name: R CMD check
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--no-vignettes")'
+          error-on: '"error"'
