@@ -1,0 +1,70 @@
+# Build the rmorielite container; publish to GHCR on a tag or manual run.
+#   ghcr.io/rootcoder007/rmorielite:latest    (main)
+#   ghcr.io/rootcoder007/rmorielite:<tag>     (v*.*.* tags)
+#   ghcr.io/rootcoder007/rmorielite:sha-<7>   (every build)
+# Plain pushes build-only; publishes on a v*.*.* tag or manual dispatch.
+name: docker-publish
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+  workflow_dispatch:
+    inputs:
+      push:
+        description: "Push to GHCR"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: docker-publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Decide whether to push
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "push=${{ inputs.push }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ startsWith(github.ref, 'refs/tags/v') }}" = "true" ]; then
+            echo "push=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "push=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        if: steps.decide.outputs.push == 'true'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/rmorielite
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=tag
+            type=sha,prefix=sha-
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: ${{ steps.decide.outputs.push == 'true' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
