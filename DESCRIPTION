@@ -28,6 +28,7 @@ Depends:
   R (>= 4.1.0)
 Imports:
   rmorie,
+  moriebricklayer,
   httr2,
   tools,
   utils
@@ -43,3 +44,4 @@ Config/roxygen2/version: 8.0.0
 Remotes:
   rootcoder007/rmorie,
   rootcoder007/rmoriedata
+Additional_repositories: https://rootcoder007.r-universe.dev
