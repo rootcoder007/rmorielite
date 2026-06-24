@@ -57,7 +57,7 @@ that is `~/Library/Application Support/.../rmorielite`, on Windows
 
 ``` r
 rmorielite_cache_dir()                  # default: session tempdir
-#> [1] "/tmp/RtmpuBl36I/rmorielite/cache"
+#> [1] "/tmp/RtmphiKY6P/rmorielite/cache"
 rmorielite_cache_dir(persistent = TRUE) # opt in to R_user_dir
 #> [1] "/home/runner/.cache/R/rmorielite"
 ```
