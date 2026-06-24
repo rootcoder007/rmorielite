@@ -28,7 +28,6 @@ Depends:
   R (>= 4.1.0)
 Imports:
   rmorie,
-  moriebricklayer,
   httr2,
   tools,
   utils
@@ -40,8 +39,7 @@ Suggests:
 URL: https://github.com/rootcoder007/rmorielite
 BugReports: https://github.com/rootcoder007/rmorielite/issues
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
 Remotes:
   rootcoder007/rmorie,
-  rootcoder007/rmoriedata,
-  rootcoder007/morie-bricklayer/bricklayer
-Config/roxygen2/version: 8.0.0
+  rootcoder007/rmoriedata
