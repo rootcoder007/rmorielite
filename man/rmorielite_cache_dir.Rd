@@ -12,14 +12,14 @@ rmorielite_cache_dir(
 }
 \arguments{
 \item{which}{One of \code{"data"}, \code{"cache"}, \code{"config"}; matches the
-\code{which} argument of \code{\link[tools:userdir]{tools::R_user_dir()}}. Defaults to \code{"cache"}.}
+\code{which} argument of \code{\link[tools:R_user_dir]{tools::R_user_dir()}}. Defaults to \code{"cache"}.}
 
 \item{create}{Logical. If \code{TRUE} (the default), create the
 directory recursively if it does not yet exist.}
 
 \item{persistent}{Logical or \code{NULL}. If \code{NULL} (the default), reads
 the environment variable \code{RMORIELITE_PERSISTENT_CACHE}. If \code{TRUE},
-uses \code{\link[tools:userdir]{tools::R_user_dir()}}; if \code{FALSE}, uses \code{tempdir()}.}
+uses \code{\link[tools:R_user_dir]{tools::R_user_dir()}}; if \code{FALSE}, uses \code{tempdir()}.}
 }
 \value{
 A character scalar: the absolute path of the directory.
@@ -35,7 +35,7 @@ session temp area without explicit user consent.
 To opt in to a \emph{persistent} cache that survives R sessions, set the
 environment variable \code{RMORIELITE_PERSISTENT_CACHE=1} or pass
 \code{persistent = TRUE}. The persistent location follows R's official
-convention via \code{\link[tools:userdir]{tools::R_user_dir()}} — on macOS that is
+convention via \code{\link[tools:R_user_dir]{tools::R_user_dir()}} — on macOS that is
 \verb{~/Library/Application Support/.../rmorielite}, on Windows
 \verb{\%LOCALAPPDATA\%\\R\\.../rmorielite}, and on Linux
 \verb{$XDG_DATA_HOME/R/rmorielite} (or \verb{~/.local/share/R/rmorielite} if

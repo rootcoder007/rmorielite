@@ -21,13 +21,11 @@
 #'   `tools` are required. No `httr`, `curl`, `Rcpp`, or
 #'   `tidyverse`-stack dependencies in the base install.
 #'
-#' @section rOpenSci review:
+#' @section Relationship to rmorie:
 #'
-#' This package is the "focused rewrite" requested by the rOpenSci
-#' editorial board at \href{https://github.com/ropensci/software-review/issues/770}{software-review #770}.
-#' The upstream multi-domain `rmorie` package remains available at
-#' \url{https://github.com/rootcoder007/rmorie}; `rmorielite` is an
-#' independent codebase, not a fork.
+#' `rmorielite` is a focused interface to the carceral, policing, and
+#' public-health data domain. The upstream multi-domain `rmorie` package
+#' is available at \url{https://github.com/rootcoder007/rmorie}.
 #'
 #' @keywords internal
 "_PACKAGE"

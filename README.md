@@ -6,7 +6,7 @@ Polite retrieval of openly-published Canadian carceral and police-oversight data
 
 ## Status
 
-**v0.1 — under development.** Focused rewrite the rOpenSci editorial board requested at [software-review #770](https://github.com/ropensci/software-review/issues/770). Scope is narrower than upstream [`rmorie`](https://github.com/rootcoder007/rmorie): data retrieval and extraction only.
+**v0.1 — under development.** A focused interface to carceral, policing, and public-health open data — narrower than upstream [`rmorie`](https://github.com/rootcoder007/rmorie): retrieval, extraction, and the domain analysis API.
 
 ## Scope
 

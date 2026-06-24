@@ -24,11 +24,11 @@ Description: A focused interface for retrieving, mining, and analysing
 License: AGPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Depends:
   R (>= 4.1.0)
 Imports:
   rmorie,
+  moriebricklayer,
   httr2,
   tools,
   utils
@@ -42,4 +42,6 @@ BugReports: https://github.com/rootcoder007/rmorielite/issues
 Config/testthat/edition: 3
 Remotes:
   rootcoder007/rmorie,
-  rootcoder007/rmoriedata
+  rootcoder007/rmoriedata,
+  rootcoder007/morie-bricklayer/bricklayer
+Config/roxygen2/version: 8.0.0

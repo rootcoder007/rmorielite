@@ -20,7 +20,7 @@ reports.
 small on-disk state file; the default floor is one request every
 0.25 seconds. See \code{\link[=rmorielite_fetch]{rmorielite_fetch()}}.
 \item \strong{Cache by default.} Downloads land in the R-canonical user data
-directory via \code{\link[tools:userdir]{tools::R_user_dir()}}. Second fetches of the same
+directory via \code{\link[tools:R_user_dir]{tools::R_user_dir()}}. Second fetches of the same
 URL are served from disk. See \code{\link[=rmorielite_cache_dir]{rmorielite_cache_dir()}}.
 \item \strong{Provenance by default.} SHA256 verification is available
 alongside every fetched file.
@@ -30,14 +30,12 @@ alongside every fetched file.
 }
 }
 
-\section{rOpenSci review}{
+\section{Relationship to rmorie}{
 
 
-This package is the "focused rewrite" requested by the rOpenSci
-editorial board at \href{https://github.com/ropensci/software-review/issues/770}{software-review #770}.
-The upstream multi-domain \code{rmorie} package remains available at
-\url{https://github.com/rootcoder007/rmorie}; \code{rmorielite} is an
-independent codebase, not a fork.
+\code{rmorielite} is a focused interface to the carceral, policing, and
+public-health data domain. The upstream multi-domain \code{rmorie} package
+is available at \url{https://github.com/rootcoder007/rmorie}.
 }
 
 \seealso{
@@ -50,6 +48,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Vansh Singh Ruhela \email{vsruhela@proton.me} (\href{https://orcid.org/0009-0004-1750-3592}{ORCID})
+
+Authors:
+\itemize{
+  \item Vansh Singh Ruhela \email{vsruhela@proton.me} (\href{https://orcid.org/0009-0004-1750-3592}{ORCID})
+}
 
 }
 \keyword{internal}
