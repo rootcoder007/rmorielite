@@ -52,7 +52,7 @@ jobs:
         with:
           extra-packages: any::rcmdcheck, any::roxygen2
           cache: 'always'
-          cache-version: 1
+          cache-version: 2
           needs: check
 
       - name: Roxygenise
