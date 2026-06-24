@@ -40,6 +40,14 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      # moriebricklayer lives in a subdirectory of its repo, which pak cannot
+      # resolve from the DESCRIPTION Remotes/Additional_repositories. It IS
+      # built on r-universe, so pre-install it from there before pak resolves
+      # the rest; pak then treats it as already satisfied.
+      - name: Pre-install moriebricklayer (subdir package) from r-universe
+        run: install.packages("moriebricklayer", repos = c("https://rootcoder007.r-universe.dev", "https://packagemanager.posit.co/cran/latest"))
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck, any::roxygen2
