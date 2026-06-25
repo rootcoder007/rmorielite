@@ -27,7 +27,7 @@ A character scalar: the absolute path of the directory.
 \description{
 Returns the directory \code{rmorielite} uses for cached resources. By
 default this is a sub-tree of the R \strong{session temporary directory}
-(\code{tempdir()}) — files are cleaned up automatically when R exits, in
+(\code{tempdir()}) -- files are cleaned up automatically when R exits, in
 line with the CRAN policy that packages must not write outside the
 session temp area without explicit user consent.
 }
@@ -35,7 +35,7 @@ session temp area without explicit user consent.
 To opt in to a \emph{persistent} cache that survives R sessions, set the
 environment variable \code{RMORIELITE_PERSISTENT_CACHE=1} or pass
 \code{persistent = TRUE}. The persistent location follows R's official
-convention via \code{\link[tools:R_user_dir]{tools::R_user_dir()}} — on macOS that is
+convention via \code{\link[tools:R_user_dir]{tools::R_user_dir()}} -- on macOS that is
 \verb{~/Library/Application Support/.../rmorielite}, on Windows
 \verb{\%LOCALAPPDATA\%\\R\\.../rmorielite}, and on Linux
 \verb{$XDG_DATA_HOME/R/rmorielite} (or \verb{~/.local/share/R/rmorielite} if
@@ -43,6 +43,6 @@ convention via \code{\link[tools:R_user_dir]{tools::R_user_dir()}} — on macOS 
 }
 \examples{
 rmorielite_cache_dir()                  # default: session tempdir
-rmorielite_cache_dir(persistent = TRUE) # opt in to R_user_dir
+rmorielite_cache_dir(persistent = TRUE, create = FALSE) # opt in to R_user_dir
 
 }
