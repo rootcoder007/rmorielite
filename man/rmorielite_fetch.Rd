@@ -44,10 +44,14 @@ public-data CKAN portals.
 }
 \examples{
 \donttest{
-path <- rmorielite_fetch(
-  "https://data.ontario.ca/api/3/action/package_list"
-)
-file.exists(path)
+# Live network call; wrapped in try() so the example never errors if the
+# portal is unreachable under R CMD check --run-donttest.
+try({
+  path <- rmorielite_fetch(
+    "https://data.ontario.ca/api/3/action/package_list"
+  )
+  file.exists(path)
+})
 }
 
 }

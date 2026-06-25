@@ -33,12 +33,16 @@ usually stable, so name-pattern matching survives portal reslugs.
 }
 \examples{
 \donttest{
-res <- rmorielite_ckan_resolve(
-  portal        = "https://data.ontario.ca",
-  package_slug  = "data-on-inmates-in-ontario",
-  name_pattern  = "Restrictive.?Confinement.*Detailed.?Dataset"
-)
-if (!is.null(res)) res$url
+# Live network call; wrapped in try() so the example never errors if the
+# portal is unreachable under R CMD check --run-donttest.
+try({
+  res <- rmorielite_ckan_resolve(
+    portal        = "https://data.ontario.ca",
+    package_slug  = "data-on-inmates-in-ontario",
+    name_pattern  = "Restrictive.?Confinement.*Detailed.?Dataset"
+  )
+  if (!is.null(res)) res$url
+})
 }
 
 }
