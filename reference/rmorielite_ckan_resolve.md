@@ -43,12 +43,16 @@ fails, or no resource matches.
 
 ``` r
 # \donttest{
-res <- rmorielite_ckan_resolve(
-  portal        = "https://data.ontario.ca",
-  package_slug  = "data-on-inmates-in-ontario",
-  name_pattern  = "Restrictive.?Confinement.*Detailed.?Dataset"
-)
-if (!is.null(res)) res$url
+# Live network call; wrapped in try() so the example never errors if the
+# portal is unreachable under R CMD check --run-donttest.
+try({
+  res <- rmorielite_ckan_resolve(
+    portal        = "https://data.ontario.ca",
+    package_slug  = "data-on-inmates-in-ontario",
+    name_pattern  = "Restrictive.?Confinement.*Detailed.?Dataset"
+  )
+  if (!is.null(res)) res$url
+})
 #> [1] "https://data.ontario.ca/dataset/09f7fc65-d3bb-4ca8-8b84-1cdc3ef73c36/resource/5a0c5804-a055-4031-9743-73f556e43bb4/download/a01_restrictive_confinement_detailed_dataset.csv"
 # }
 ```
