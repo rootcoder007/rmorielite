@@ -4,3 +4,25 @@ template:
   includes:
     in_header: |
       <meta name="google-site-verification" content="8ORzeHrfoPIOrujfV-km-kXCi9HD8dvL5GYH-GqwjYI">
+
+reference:
+  - title: "Data retrieval (rmorielite's own functions)"
+    desc: "The polite, cache-aware retrieval layer provided by rmorielite itself."
+    contents:
+      - rmorielite_fetch
+      - rmorielite_ckan_resolve
+      - rmorielite_cache_dir
+  - title: "Re-exported domain & analysis API (from rmorie)"
+    desc: >
+      The full carceral, policing, and oversight API -- correctional tracking
+      and segregation (OTIS), special-investigations and oversight bodies
+      (SIU, ARSAU), municipal police services (Toronto/TPS, Chicago/CPD,
+      New York, Vancouver), and public-health / substance-use surveys
+      (Canadian Cannabis Survey, CPADS, Health Infobase, CIHI) -- plus the
+      analysis toolkit (causal estimators, survey weighting, fairness audits,
+      spatial statistics, item-response models) is re-exported from the
+      upstream 'rmorie' package. Each re-exported function below links to its
+      full reference in the rmorie manual
+      (https://rootcoder007.github.io/rmorie/).
+    contents:
+      - reexports
