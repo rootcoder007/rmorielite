@@ -1,10 +1,12 @@
 # rmorielite: Polite Retrieval of Canadian Carceral and Police-Oversight Data
 
-A focused, audited subset of the upstream `rmorie` toolkit, scoped
-narrowly to data retrieval and extraction for openly-published Canadian
-administrative datasets: Ontario's OTIS (Offender Tracking Information
-System) restrictive- confinement releases, and federal Structured
-Intervention Unit (SIU) reports.
+A focused interface to the upstream `rmorie` toolkit for retrieving,
+mining, and analysing open carceral, policing, police-oversight, and
+public-health data – correctional tracking and segregation (OTIS),
+special-investigations and oversight bodies (SIU, ARSAU), municipal
+police services (Toronto, Chicago, New York, Vancouver), and
+substance-use surveys (Canadian Cannabis Survey, CPADS, and related
+Health Infobase / CIHI tables).
 
 ## Design principles
 
@@ -13,8 +15,9 @@ Intervention Unit (SIU) reports.
   seconds. See
   [`rmorielite_fetch()`](https://rootcoder007.github.io/rmorielite/reference/rmorielite_fetch.md).
 
-- **Cache by default.** Downloads land in the R-canonical user data
-  directory via
+- **Cache by default.** Downloads land in the R session temporary
+  directory ([`tempdir()`](https://rdrr.io/r/base/tempfile.html)); set
+  `RMORIELITE_PERSISTENT_CACHE=1` to opt in to a persistent cache via
   [`tools::R_user_dir()`](https://rdrr.io/r/tools/userdir.html). Second
   fetches of the same URL are served from disk. See
   [`rmorielite_cache_dir()`](https://rootcoder007.github.io/rmorielite/reference/rmorielite_cache_dir.md).
@@ -22,9 +25,10 @@ Intervention Unit (SIU) reports.
 - **Provenance by default.** SHA256 verification is available alongside
   every fetched file.
 
-- **Minimum dependencies.** Only `stats`, `utils`, `jsonlite`, and
-  `tools` are required. No `httr`, `curl`, `Rcpp`, or `tidyverse`-stack
-  dependencies in the base install.
+- **Focused re-export.** rmorielite imports the upstream `rmorie`
+  toolkit and `rmoriebricklayer`, re-exporting their domain and
+  provenance APIs, and adds its own small `httr2`-based polite,
+  cache-aware fetch layer.
 
 ## Relationship to rmorie
 
