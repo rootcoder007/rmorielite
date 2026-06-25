@@ -51,11 +51,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository_owner }}/rmorielite
+          images: |
+            ghcr.io/${{ github.repository_owner }}/rmorielite
+            docker.io/${{ github.repository_owner }}/rmorielite
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=ref,event=tag
