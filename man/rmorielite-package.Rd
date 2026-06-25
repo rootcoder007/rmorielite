@@ -6,12 +6,13 @@
 \alias{rmorielite-package}
 \title{rmorielite: Polite Retrieval of Canadian Carceral and Police-Oversight Data}
 \description{
-A focused, audited subset of the upstream \code{rmorie} toolkit, scoped
-narrowly to data retrieval and extraction for openly-published
-Canadian administrative datasets:
-Ontario's OTIS (Offender Tracking Information System) restrictive-
-confinement releases, and federal Structured Intervention Unit (SIU)
-reports.
+A focused interface to the upstream \code{rmorie} toolkit for retrieving,
+mining, and analysing open carceral, policing, police-oversight, and
+public-health data -- correctional tracking and segregation (OTIS),
+special-investigations and oversight bodies (SIU, ARSAU), municipal
+police services (Toronto, Chicago, New York, Vancouver), and
+substance-use surveys (Canadian Cannabis Survey, CPADS, and related
+Health Infobase / CIHI tables).
 }
 \section{Design principles}{
 
@@ -19,14 +20,16 @@ reports.
 \item \strong{Polite by default.} Inter-request interval is enforced via a
 small on-disk state file; the default floor is one request every
 0.25 seconds. See \code{\link[=rmorielite_fetch]{rmorielite_fetch()}}.
-\item \strong{Cache by default.} Downloads land in the R-canonical user data
-directory via \code{\link[tools:R_user_dir]{tools::R_user_dir()}}. Second fetches of the same
-URL are served from disk. See \code{\link[=rmorielite_cache_dir]{rmorielite_cache_dir()}}.
+\item \strong{Cache by default.} Downloads land in the R session temporary
+directory (\code{\link[=tempdir]{tempdir()}}); set \code{RMORIELITE_PERSISTENT_CACHE=1} to
+opt in to a persistent cache via \code{\link[tools:R_user_dir]{tools::R_user_dir()}}. Second
+fetches of the same URL are served from disk. See \code{\link[=rmorielite_cache_dir]{rmorielite_cache_dir()}}.
 \item \strong{Provenance by default.} SHA256 verification is available
 alongside every fetched file.
-\item \strong{Minimum dependencies.} Only \code{stats}, \code{utils}, \code{jsonlite}, and
-\code{tools} are required. No \code{httr}, \code{curl}, \code{Rcpp}, or
-\code{tidyverse}-stack dependencies in the base install.
+\item \strong{Focused re-export.} rmorielite imports the upstream \code{rmorie}
+toolkit and \code{rmoriebricklayer}, re-exporting their domain and
+provenance APIs, and adds its own small \code{httr2}-based polite,
+cache-aware fetch layer.
 }
 }
 
