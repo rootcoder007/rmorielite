@@ -682,5 +682,6 @@ reference in the rmorie manual
   [`verify_sha256`](https://rootcoder007.github.io/rmorielite/reference/reexports.md)
   [`write_manifest_json`](https://rootcoder007.github.io/rmorielite/reference/reexports.md)
   [`write_summary_txt`](https://rootcoder007.github.io/rmorielite/reference/reexports.md)
+  [`morie_data_checksums`](https://rootcoder007.github.io/rmorielite/reference/reexports.md)
   : Objects exported from other packages
 

@@ -615,3 +615,7 @@ to see their documentation.
   [`verify_sha256()`](https://rdrr.io/pkg/rmoriebricklayer/man/verify_sha256.html),
   [`write_manifest_json()`](https://rdrr.io/pkg/rmoriebricklayer/man/write_manifest_json.html),
   [`write_summary_txt()`](https://rdrr.io/pkg/rmoriebricklayer/man/write_summary_txt.html)
+
+- rmoriedata:
+
+  [`morie_data_checksums()`](https://rdrr.io/pkg/rmoriedata/man/morie_data_checksums.html)
