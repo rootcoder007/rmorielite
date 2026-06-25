@@ -29,11 +29,11 @@ Depends:
 Imports:
   rmorie,
   rmoriebricklayer,
+  rmoriedata,
   httr2,
   tools,
   utils
 Suggests:
-  rmoriedata,
   testthat (>= 3.0.0),
   knitr,
   rmarkdown

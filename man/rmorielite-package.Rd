@@ -23,7 +23,8 @@ small on-disk state file; the default floor is one request every
 \item \strong{Cache by default.} Downloads land in the R session temporary
 directory (\code{\link[=tempdir]{tempdir()}}); set \code{RMORIELITE_PERSISTENT_CACHE=1} to
 opt in to a persistent cache via \code{\link[tools:R_user_dir]{tools::R_user_dir()}}. Second
-fetches of the same URL are served from disk. See \code{\link[=rmorielite_cache_dir]{rmorielite_cache_dir()}}.
+fetches of the same URL are served from disk. See
+\code{\link[=rmorielite_cache_dir]{rmorielite_cache_dir()}}.
 \item \strong{Provenance by default.} SHA256 verification is available
 alongside every fetched file.
 \item \strong{Focused re-export.} rmorielite imports the upstream \code{rmorie}

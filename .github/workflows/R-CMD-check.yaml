@@ -44,8 +44,8 @@ jobs:
       # resolve from the DESCRIPTION Remotes/Additional_repositories. It IS
       # built on r-universe, so pre-install it from there before pak resolves
       # the rest; pak then treats it as already satisfied.
-      - name: Pre-install rmoriebricklayer (subdir package) from r-universe
-        run: install.packages("rmoriebricklayer", repos = c("https://rootcoder007.r-universe.dev", "https://packagemanager.posit.co/cran/latest"))
+      - name: Pre-install rmorie-family r-universe deps
+        run: install.packages(c("rmorie", "rmoriebricklayer", "rmoriedata"), repos = c("https://rootcoder007.r-universe.dev", "https://packagemanager.posit.co/cran/latest"))
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2

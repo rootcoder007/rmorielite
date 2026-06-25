@@ -66,7 +66,30 @@ rmorielite_fetch <- function(url,
     paste0("rmorielite/", utils::packageVersion("rmorielite"),
            " (https://github.com/rootcoder007/rmorielite)"))
 
-  resp <- httr2::req_perform(req, path = dest_path)
-  httr2::resp_check_status(resp)
+  ok <- tryCatch({
+    resp <- httr2::req_perform(req, path = dest_path)
+    httr2::resp_check_status(resp)
+    TRUE
+  }, error = function(e) FALSE)
+
+  if (!ok) {
+    ## Failsafe: fall back to a Wayback Machine snapshot via the shared
+    ## bricklayer layer when the live source is unreachable.
+    wb <- tryCatch(rmoriebricklayer::wayback_snapshot_url(url),
+      error = function(e) NULL
+    )
+    if (is.null(wb)) {
+      stop("Fetch failed and no Wayback snapshot is available for: ", url,
+        call. = FALSE
+      )
+    }
+    wb_req <- httr2::req_user_agent(
+      httr2::request(wb),
+      paste0("rmorielite/", utils::packageVersion("rmorielite"),
+             " (https://github.com/rootcoder007/rmorielite)")
+    )
+    resp <- httr2::req_perform(wb_req, path = dest_path)
+    httr2::resp_check_status(resp)
+  }
   normalizePath(dest_path, winslash = "/")
 }
